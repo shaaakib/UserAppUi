@@ -1,0 +1,59 @@
+<div class="body">
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-header">
+                <h2>Welcome</h2>
+                <p class="text-muted">Sign in to your account or create a new one</p>
+            </div>
+
+            <ul class="nav nav-tabs auth-tabs" id="authTabs" role="tablist">
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link active w-100" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Login</button>
+                </li>
+                <li class="nav-item" role="presentation" style="width: 50%;">
+                    <button class="nav-link w-100" id="signup-tab" data-bs-toggle="tab" data-bs-target="#signup" type="button" role="tab" aria-controls="signup" aria-selected="false">Sign Up</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="authTabsContent">
+                <!-- Login Form -->
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <form>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" name="loginEmail" [(ngModel)]="LoginObj.email" id="loginEmail" placeholder="name@example.com" required>
+                            <label for="loginEmail">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" name="loginPassword" [(ngModel)]="LoginObj.password" id="loginPassword" placeholder="Password" required>
+                            <label for="loginPassword">Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="onLogin()">Login</button>
+                    </form>
+                </div>
+
+                <!-- Signup Form -->
+                <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                    <form>
+                        <div class="form-floating">
+                            <input type="text" name="fullName" [(ngModel)]="resgiserObj.fullName" class="form-control" id="fullName" placeholder="Full Name" required>
+                            <label for="fullName">Full Name</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="email" name="email" [(ngModel)]="resgiserObj.email" class="form-control" id="email" placeholder="name@example.com" required>
+                            <label for="email">Email address</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="tel" name="mobileNo" [(ngModel)]="resgiserObj.mobileNo" class="form-control" id="mobileNo" placeholder="Mobile Number" required>
+                            <label for="mobileNo">Mobile Number</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="password" [(ngModel)]="resgiserObj.password" class="form-control" id="password" placeholder="Password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="onRegister()">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

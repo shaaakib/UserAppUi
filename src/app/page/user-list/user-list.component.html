@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4">User Information</h2>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered text-center align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>User ID</th>
+                    <th>Email</th>
+                    <th>Created Date</th>
+                    <th>Full Name</th>
+                    <th>Mobile No</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of userList; track $index) {
+                <tr>
+                    <td>{{$index + 1}}</td>
+                    <td>{{item.fullName}}</td>
+                    <td>+880 {{item.mobileNo}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.createdDate | date:'dd/MM/yyyy'}}</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
