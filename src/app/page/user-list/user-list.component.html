@@ -25,3 +25,35 @@
         </table>
     </div>
 </div>
+
+<div class="row container-fluid mt-5 mb-5">
+
+    <div class="col-3">
+        <label>Select State</label>
+        <select class="form-select" [(ngModel)]="selectedSateId" (change)="GetDistrictByStateId()">
+            <option value="">Select State</option>
+            @for (item of stateList; track $index) {
+            <option value="{{item.stateId}}">{{item.stateName}}</option>
+            }
+        </select>
+    </div>
+    <div class="col-3">
+        <label>Select District</label>
+        <select class="form-select" [(ngModel)]="selectedDistrictId" (change)="GetCityByDistrictId()">
+            <option value="">Select District</option>
+            @for (item of districtList; track $index) {
+            <option value="{{item.districtId}}">{{item.districtName}}</option>
+            }
+        </select>
+    </div>
+    <div class="col-3">
+        <label>Select City</label>
+        <select class="form-select">
+            <option value="">Select City</option>
+            @for (item of cityList; track $index) {
+            <option value="{{item.cityId}}">{{item.cityName}}</option>
+            }
+        </select>
+    </div>
+
+</div>
